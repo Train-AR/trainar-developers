@@ -4,32 +4,26 @@ import Layout from '../layouts/Layout.astro';
 const surfaces = [
   {
     title: 'Super-Tenant API',
-    description: 'Cross-tenant operations for partners building shipped integrations (Nango connectors, Marketplace bundles, automation tooling).',
-    gradient: 'linear-gradient(135deg, #0074FF 0%, #3BFFBF 100%)',
+    description: 'Cross-tenant operations for partners building shipped integrations — Nango connectors, Marketplace bundles, automation tooling.',
+    tag: 'API',
     icon: 'M13 2L3 14h9l-1 8 10-12h-9l1-8z',
   },
   {
     title: 'Marketplace bundle authoring',
     description: 'Publish a bundle of skills, knowledge, and procedures to the TrainAR Marketplace and earn revenue from every subscribing tenant.',
-    gradient: 'linear-gradient(135deg, #3BFFBF 0%, #0074FF 100%)',
+    tag: 'Revenue share',
     icon: 'M3 3h7v7H3zM14 3h7v7h-7zM14 14h7v7h-7zM3 14h7v7H3z',
   },
   {
     title: 'Nango connector contribution',
-    description: 'Add support for a new field-service or CRM system to TrainAR by contributing a connector via the Nango ecosystem.',
-    gradient: 'linear-gradient(135deg, #0074FF 0%, #121621 100%)',
-    icon: 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z',
-  },
-  {
-    title: 'Curator program',
-    description: 'The economic model behind publishing on the Marketplace. Pricing, fee structure, payout cadence, exclusivity options.',
-    gradient: 'linear-gradient(135deg, #121621 0%, #0074FF 100%)',
-    icon: 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z',
+    description: 'Add support for a new field-service or CRM system to TrainAR by contributing a connector through the Nango ecosystem.',
+    tag: 'Open ecosystem',
+    icon: 'M9 12h6m-6 4h6m-6 -8h6M5 4h14a2 2 0 012 2v12a2 2 0 01-2 2H5a2 2 0 01-2-2V6a2 2 0 012-2z',
   },
   {
     title: 'Platform-skill spec',
     description: 'Calling conventions, response_target options, display hints, voice patterns, orchestration rules for skills you author at platform level.',
-    gradient: 'linear-gradient(135deg, #0074FF 0%, #3BFFBF 100%)',
+    tag: 'AI runtime',
     icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z',
   },
 ];
@@ -37,110 +31,197 @@ const surfaces = [
 
 <Layout
   title="TrainAR Developers — Build on TrainAR"
-  description="Build on TrainAR. Partner integrations, Marketplace bundles, curator economics, platform-skill authoring."
+  description="The gated developer surface for partners shipping integrations, Marketplace bundles, Nango connectors, and platform-skill code that runs on every TrainAR engineer's glasses."
   canonicalPath="/"
 >
-  <section class="border-b border-[#E2E8F0] bg-gradient-to-b from-white to-[#F7FAFC]">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+  <!-- Hero -->
+  <section class="relative overflow-hidden bg-[var(--ta-navy-900)] text-white">
+    <!-- Brand gradient backdrop -->
+    <div class="absolute inset-0 opacity-90" style="background: radial-gradient(1200px 600px at 80% -10%, rgba(59,255,191,0.18) 0%, transparent 50%), radial-gradient(900px 500px at 10% 110%, rgba(0,116,255,0.35) 0%, transparent 60%), linear-gradient(180deg, #121621 0%, #0B0E17 100%);"></div>
+
+    <!-- Subtle grid overlay -->
+    <div class="absolute inset-0 opacity-[0.06]" style="background-image: linear-gradient(rgba(255,255,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.6) 1px, transparent 1px); background-size: 60px 60px;"></div>
+
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32">
       <div class="max-w-3xl">
-        <span class="inline-flex items-center rounded-full bg-[#E8F2FF] px-3 py-1 text-xs font-bold uppercase tracking-widest text-[#0074FF]">For partners + builders</span>
-        <h1 class="mt-5 font-[var(--font-display)] text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-[#121621] uppercase leading-[1.0]">
-          Build on<br />TrainAR
+        <span class="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/15 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.18em] text-[var(--ta-accent)]">
+          <span class="h-1.5 w-1.5 rounded-full bg-[var(--ta-accent)] animate-pulse"></span>
+          For partners + builders
+        </span>
+        <h1 class="mt-6 font-[var(--font-display)] text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight uppercase leading-[0.95]">
+          Build on<br /><span style="background: linear-gradient(135deg, #FFFFFF 0%, #3BFFBF 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">TrainAR</span>
         </h1>
-        <p class="mt-6 text-lg sm:text-xl text-[#4B5563] max-w-2xl leading-relaxed">
-          The developer surface for partners shipping integrations, curators publishing bundles, and platform engineers authoring skills the on-glasses AI calls in real time.
+        <p class="mt-6 text-lg sm:text-xl text-white/80 max-w-2xl leading-relaxed">
+          The developer surface for ISVs and platform engineers — ship integrations that connect TrainAR to your customers' tools, author skills that run on every engineer's glasses, and earn revenue when your work shows up in production.
         </p>
-        <div class="mt-8 flex flex-wrap gap-3">
+        <div class="mt-10 flex flex-wrap gap-3">
           <a
             href="/request-access"
-            class="inline-flex items-center rounded-[12px] px-5 py-3 text-sm font-semibold text-white shadow-[0_4px_20px_hsla(212,100%,50%,0.15)] hover:shadow-[0_8px_30px_hsla(212,100%,50%,0.20)] transition-all"
+            class="inline-flex items-center gap-2 rounded-[12px] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_8px_30px_rgba(0,116,255,0.45)] hover:shadow-[0_12px_40px_rgba(0,116,255,0.6)] hover:-translate-y-0.5 transition-all"
             style="background: linear-gradient(180deg, #0074FF 0%, #005FD1 100%);"
           >
             Request access
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
           </a>
           <a
             href="https://docs.trainar.ai/developer/"
-            class="inline-flex items-center rounded-[12px] px-5 py-3 text-sm font-semibold text-[#121621] bg-white border border-[#E2E8F0] hover:bg-[#F7FAFC] transition"
+            class="inline-flex items-center gap-2 rounded-[12px] px-6 py-3.5 text-sm font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition"
           >
-            Tenant API docs →
+            Read the developer docs
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"></path></svg>
           </a>
+        </div>
+
+        <!-- Trust strip -->
+        <div class="mt-12 pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl">
+          <div>
+            <div class="font-[var(--font-display)] text-3xl font-bold text-white">4</div>
+            <div class="mt-1 text-xs uppercase tracking-widest text-white/60">Build surfaces</div>
+          </div>
+          <div>
+            <div class="font-[var(--font-display)] text-3xl font-bold text-white">70</div>
+            <div class="mt-1 text-xs uppercase tracking-widest text-white/60">MCP tools available</div>
+          </div>
+          <div>
+            <div class="font-[var(--font-display)] text-3xl font-bold text-white">3<span class="text-[var(--ta-accent)]">d</span></div>
+            <div class="mt-1 text-xs uppercase tracking-widest text-white/60">Review turnaround</div>
+          </div>
+          <div>
+            <div class="font-[var(--font-display)] text-3xl font-bold text-white">Stripe<span class="text-[var(--ta-accent)]">-like</span></div>
+            <div class="mt-1 text-xs uppercase tracking-widest text-white/60">Staging → prod model</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-    <div class="max-w-3xl mb-10">
-      <h2 class="font-[var(--font-display)] text-3xl sm:text-4xl font-bold tracking-tight text-[#121621] uppercase">What's available</h2>
-      <p class="mt-4 text-base text-[#4B5563]">Five surfaces. All gated. Access is granted on request after a short review — we keep the partner ecosystem small and intentional.</p>
+  <!-- Surfaces -->
+  <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
+    <div class="max-w-3xl mb-12">
+      <span class="inline-flex items-center rounded-full bg-[var(--ta-primary-50)] px-3 py-1 text-xs font-bold uppercase tracking-widest text-[var(--ta-primary)]">What's available</span>
+      <h2 class="mt-5 font-[var(--font-display)] text-3xl sm:text-4xl font-bold tracking-tight text-[var(--ta-navy-900)] uppercase">Four developer surfaces</h2>
+      <p class="mt-4 text-base text-[var(--fg-2)] leading-relaxed">All gated. Access is granted on request after a short review — we keep the partner ecosystem small and intentional.</p>
     </div>
 
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-5 sm:grid-cols-2">
       {surfaces.map((s) => (
-        <a href="/request-access" class="group rounded-2xl border border-[#E2E8F0] bg-white p-6 hover:border-[#0074FF] hover:shadow-[0_8px_30px_rgba(0,116,255,0.10)] transition-all">
-          <div
-            class="inline-flex h-11 w-11 items-center justify-center rounded-xl text-white"
-            style={`background: ${s.gradient};`}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d={s.icon}></path>
-            </svg>
+        <a href="/request-access" class="group relative rounded-2xl border border-[var(--border)] bg-white p-7 hover:border-[var(--ta-primary)] hover:shadow-[var(--shadow-brand)] transition-all overflow-hidden">
+          <!-- Mint accent line on hover -->
+          <span class="absolute top-0 left-0 right-0 h-[3px] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" style="background: linear-gradient(90deg, #0074FF 0%, #3BFFBF 100%);"></span>
+
+          <div class="flex items-start justify-between mb-5">
+            <div
+              class="inline-flex h-12 w-12 items-center justify-center rounded-xl text-white shadow-[0_4px_14px_rgba(0,116,255,0.3)]"
+              style="background: linear-gradient(135deg, #0074FF 0%, #338CFF 100%);"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d={s.icon}></path>
+              </svg>
+            </div>
+            <span class="text-[10px] font-bold uppercase tracking-[0.15em] text-[var(--fg-3)] px-2 py-1 rounded bg-[var(--bg-muted)]">{s.tag}</span>
           </div>
-          <h3 class="mt-5 font-[var(--font-display)] text-xl font-bold uppercase tracking-tight text-[#121621]">{s.title}</h3>
-          <p class="mt-2 text-sm text-[#4B5563] leading-relaxed">{s.description}</p>
-          <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#0074FF] group-hover:gap-2 transition-all">
-            Request access →
+          <h3 class="font-[var(--font-display)] text-xl font-bold uppercase tracking-tight text-[var(--ta-navy-900)]">{s.title}</h3>
+          <p class="mt-2 text-sm text-[var(--fg-2)] leading-relaxed">{s.description}</p>
+          <span class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-[var(--ta-primary)] group-hover:gap-2 transition-all">
+            Request access
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
           </span>
         </a>
       ))}
     </div>
   </section>
 
-  <section class="border-t border-[#E2E8F0] bg-white">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-      <div class="grid gap-10 lg:grid-cols-2 lg:items-center">
+  <!-- Tenant disambiguation + why-gated, in a single brand-coloured band -->
+  <section class="border-y border-[var(--border)] bg-[var(--bg)]">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-start">
         <div>
-          <h2 class="font-[var(--font-display)] text-3xl sm:text-4xl font-bold tracking-tight text-[#121621] uppercase">Already a tenant?</h2>
-          <p class="mt-4 text-base text-[#4B5563] max-w-xl leading-relaxed">
-            If you're a TrainAR customer building automation for your <strong>own</strong> tenant — wiring sessions into your Zapier, n8n, or Make flows — you don't need access here. Use the Tenant API, MCP server, and webhooks from your account.
+          <span class="inline-flex items-center rounded-full bg-[var(--ta-primary-50)] px-3 py-1 text-xs font-bold uppercase tracking-widest text-[var(--ta-primary)]">Already a tenant?</span>
+          <h2 class="mt-5 font-[var(--font-display)] text-3xl sm:text-4xl font-bold tracking-tight text-[var(--ta-navy-900)] uppercase">Use your tenant tokens, not this</h2>
+          <p class="mt-4 text-base text-[var(--fg-2)] max-w-xl leading-relaxed">
+            If you're a TrainAR customer building automation for your <strong>own</strong> tenant — wiring sessions into your Zapier, n8n, or Make flows — you don't need access here. Use the Tenant API, MCP server, and webhooks straight from your account.
           </p>
-          <a href="https://docs.trainar.ai/developer/" class="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-[#0074FF] hover:gap-2 transition-all">
-            Tenant API docs on docs.trainar.ai →
+          <a href="https://docs.trainar.ai/developer/" class="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-[var(--ta-primary)] hover:gap-2.5 transition-all">
+            Tenant API + MCP docs
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
           </a>
         </div>
         <div>
-          <h2 class="font-[var(--font-display)] text-3xl sm:text-4xl font-bold tracking-tight text-[#121621] uppercase">Why gated?</h2>
-          <p class="mt-4 text-base text-[#4B5563] max-w-xl leading-relaxed">
-            Partner integrations carry trust. A Marketplace bundle becomes part of every subscriber's training. A Nango connector ships under our name. A platform skill runs on every engineer's glasses. We review each application personally so the partner ecosystem stays small, intentional, and high-quality.
+          <span class="inline-flex items-center rounded-full bg-[var(--ta-accent)]/15 px-3 py-1 text-xs font-bold uppercase tracking-widest text-[var(--ta-accent-700)]">Why gated?</span>
+          <h2 class="mt-5 font-[var(--font-display)] text-3xl sm:text-4xl font-bold tracking-tight text-[var(--ta-navy-900)] uppercase">Partner work carries trust</h2>
+          <p class="mt-4 text-base text-[var(--fg-2)] max-w-xl leading-relaxed">
+            A Marketplace bundle becomes part of every subscriber's training. A Nango connector ships under our name. A platform skill runs on every engineer's glasses. We review each application personally so the partner ecosystem stays small, intentional, and high-quality.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="border-t border-[#E2E8F0]">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-      <div class="max-w-3xl mb-10">
-        <span class="inline-flex items-center rounded-full bg-[#E8F2FF] px-3 py-1 text-xs font-bold uppercase tracking-widest text-[#0074FF]">How partners build with us</span>
-        <h2 class="mt-5 font-[var(--font-display)] text-3xl sm:text-4xl font-bold tracking-tight text-[#121621] uppercase">Staging first, then production</h2>
-        <p class="mt-4 text-base text-[#4B5563] leading-relaxed">Same pattern as Stripe's test mode → live mode. You build and prove your integration against an isolated environment; we promote you to production once it's reviewed.</p>
-      </div>
-      <div class="grid gap-6 md:grid-cols-3">
-        <div class="rounded-2xl bg-white border border-[#E2E8F0] p-6">
-          <div class="text-xs font-bold uppercase tracking-widest text-[#0074FF]">Step 1</div>
-          <h3 class="mt-3 font-[var(--font-display)] text-xl font-bold uppercase tracking-tight text-[#121621]">Apply</h3>
-          <p class="mt-2 text-sm text-[#4B5563] leading-relaxed">Submit the request-access form. Tell us what you're building, who it's for, how you'll distribute it. We respond within 3 business days.</p>
+  <!-- How it works -->
+  <section class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
+    <div class="max-w-3xl mb-12">
+      <span class="inline-flex items-center rounded-full bg-[var(--ta-primary-50)] px-3 py-1 text-xs font-bold uppercase tracking-widest text-[var(--ta-primary)]">How partners build with us</span>
+      <h2 class="mt-5 font-[var(--font-display)] text-3xl sm:text-4xl font-bold tracking-tight text-[var(--ta-navy-900)] uppercase">Staging first, then production</h2>
+      <p class="mt-4 text-base text-[var(--fg-2)] leading-relaxed">
+        Same pattern as Stripe's test mode → live mode. You build and prove your integration against an isolated environment; we promote you to production once it's reviewed.
+      </p>
+    </div>
+
+    <ol class="grid gap-6 md:grid-cols-3 relative">
+      <!-- Connecting line between steps on md+ -->
+      <div class="hidden md:block absolute top-7 left-[16%] right-[16%] h-px" style="background: repeating-linear-gradient(90deg, var(--ta-primary-200) 0 6px, transparent 6px 12px);"></div>
+
+      <li class="relative rounded-2xl bg-white border border-[var(--border)] p-7 shadow-[var(--shadow-xs)]">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="relative inline-flex h-11 w-11 items-center justify-center rounded-full font-[var(--font-display)] text-lg font-bold text-white shadow-[0_4px_14px_rgba(0,116,255,0.3)]" style="background: linear-gradient(135deg, #0074FF 0%, #005FD1 100%);">1</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-[var(--ta-primary)]">Apply</span>
         </div>
-        <div class="rounded-2xl bg-white border border-[#E2E8F0] p-6">
-          <div class="text-xs font-bold uppercase tracking-widest text-[#0074FF]">Step 2</div>
-          <h3 class="mt-3 font-[var(--font-display)] text-xl font-bold uppercase tracking-tight text-[#121621]">Build on staging</h3>
-          <p class="mt-2 text-sm text-[#4B5563] leading-relaxed">Approved partners get a staging tenant + scoped staging tokens. Build and test against an isolated environment that mirrors production. No customer data at risk.</p>
+        <h3 class="font-[var(--font-display)] text-xl font-bold uppercase tracking-tight text-[var(--ta-navy-900)]">Submit the form</h3>
+        <p class="mt-2 text-sm text-[var(--fg-2)] leading-relaxed">Tell us what you're building, who it's for, how you'll distribute it. We respond within 3 business days.</p>
+      </li>
+
+      <li class="relative rounded-2xl bg-white border border-[var(--border)] p-7 shadow-[var(--shadow-xs)]">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="relative inline-flex h-11 w-11 items-center justify-center rounded-full font-[var(--font-display)] text-lg font-bold text-white shadow-[0_4px_14px_rgba(0,116,255,0.3)]" style="background: linear-gradient(135deg, #0074FF 0%, #005FD1 100%);">2</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-[var(--ta-primary)]">Build</span>
         </div>
-        <div class="rounded-2xl bg-white border border-[#E2E8F0] p-6">
-          <div class="text-xs font-bold uppercase tracking-widest text-[#0074FF]">Step 3</div>
-          <h3 class="mt-3 font-[var(--font-display)] text-xl font-bold uppercase tracking-tight text-[#121621]">Promote to prod</h3>
-          <p class="mt-2 text-sm text-[#4B5563] leading-relaxed">Once we've reviewed your integration end-to-end on staging, we promote: your bundle or connector ships to production, and you get prod-scoped tokens if your integration needs them.</p>
+        <h3 class="font-[var(--font-display)] text-xl font-bold uppercase tracking-tight text-[var(--ta-navy-900)]">Ship on staging</h3>
+        <p class="mt-2 text-sm text-[var(--fg-2)] leading-relaxed">Approved partners get a staging tenant + scoped staging tokens hitting <code class="text-[12px] bg-[var(--bg-muted)] px-1.5 py-0.5 rounded">staging.api.trainar.ai</code> + <code class="text-[12px] bg-[var(--bg-muted)] px-1.5 py-0.5 rounded">staging.mcp.trainar.ai</code>. No customer data at risk.</p>
+      </li>
+
+      <li class="relative rounded-2xl bg-white border border-[var(--border)] p-7 shadow-[var(--shadow-xs)]">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="relative inline-flex h-11 w-11 items-center justify-center rounded-full font-[var(--font-display)] text-lg font-bold text-white shadow-[0_4px_14px_rgba(0,116,255,0.3)]" style="background: linear-gradient(135deg, #0074FF 0%, #3BFFBF 100%);">3</span>
+          <span class="text-xs font-bold uppercase tracking-widest text-[var(--ta-accent-700)]">Promote</span>
         </div>
+        <h3 class="font-[var(--font-display)] text-xl font-bold uppercase tracking-tight text-[var(--ta-navy-900)]">Live on prod</h3>
+        <p class="mt-2 text-sm text-[var(--fg-2)] leading-relaxed">Once we've reviewed end-to-end on staging, we promote — your bundle or connector ships to production, and you get prod-scoped tokens hitting <code class="text-[12px] bg-[var(--bg-muted)] px-1.5 py-0.5 rounded">api.trainar.ai</code>.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="border-t border-[var(--border)] bg-[var(--ta-navy-900)] text-white">
+    <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <h2 class="font-[var(--font-display)] text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight uppercase">Ready to build?</h2>
+      <p class="mt-4 text-base sm:text-lg text-white/75 max-w-2xl mx-auto leading-relaxed">
+        Tell us what you're shipping. We'll have a real partner manager review it inside 3 business days.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3 justify-center">
+        <a
+          href="/request-access"
+          class="inline-flex items-center gap-2 rounded-[12px] px-6 py-3.5 text-sm font-semibold text-white shadow-[0_8px_30px_rgba(0,116,255,0.45)] hover:shadow-[0_12px_40px_rgba(0,116,255,0.6)] hover:-translate-y-0.5 transition-all"
+          style="background: linear-gradient(180deg, #0074FF 0%, #005FD1 100%);"
+        >
+          Request access
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg>
+        </a>
+        <a
+          href="mailto:partners@trainar.ai"
+          class="inline-flex items-center gap-2 rounded-[12px] px-6 py-3.5 text-sm font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/15 transition"
+        >
+          Email partners@trainar.ai
+        </a>
       </div>
     </div>
   </section>
