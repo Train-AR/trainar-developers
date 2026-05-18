@@ -1,0 +1,101 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  canonicalPath?: string;
+  ogImage?: string;
+}
+
+const {
+  title = 'TrainAR Developers',
+  description = 'Build on TrainAR. Partner integrations, Marketplace bundles, curator economics, platform-skill authoring.',
+  canonicalPath = '/',
+  ogImage = 'https://developers.trainar.ai/brand/icon-1100.png',
+} = Astro.props;
+
+const siteUrl = 'https://developers.trainar.ai';
+const canonical = `${siteUrl}${canonicalPath}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/brand/icon.png" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="TrainAR Developers" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <meta name="theme-color" content="#0074FF" />
+    <meta name="generator" content={Astro.generator} />
+  </head>
+  <body class="min-h-screen flex flex-col bg-[#F7FAFC] text-[#121621] font-[var(--font-ui)]">
+    <header class="border-b border-[#E2E8F0] bg-white sticky top-0 z-30 backdrop-blur-sm">
+      <div class="mx-auto max-w-7xl px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2 sm:gap-4">
+        <a href="/" class="flex items-center gap-2 sm:gap-2.5 hover:opacity-90 transition">
+          <img src="/brand/logo-180.png" alt="TrainAR" width="120" height="32" class="h-6 sm:h-7 w-auto" />
+          <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#0074FF] px-1.5 sm:px-2 py-0.5 rounded bg-[#E8F2FF]">Developers</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-[#4B5563]">
+          <a href="https://trainar.ai" class="hover:text-[#121621] transition">Product</a>
+          <a href="https://docs.trainar.ai" class="hover:text-[#121621] transition">Docs</a>
+          <a href="https://dashboard.trainar.ai" class="hover:text-[#121621] transition">Dashboard</a>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a
+            href="/request-access"
+            class="inline-flex items-center rounded-[12px] px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-white shadow-[0_4px_20px_hsla(212,100%,50%,0.15)] hover:shadow-[0_8px_30px_hsla(212,100%,50%,0.20)] transition-all whitespace-nowrap"
+            style="background: linear-gradient(180deg, #0074FF 0%, #005FD1 100%);"
+          >
+            Request access
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="border-t border-[#E2E8F0] bg-white mt-16">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10">
+        <div class="flex flex-col sm:flex-row gap-6 sm:items-end sm:justify-between">
+          <div>
+            <a href="https://trainar.ai" class="inline-flex items-center gap-2 hover:opacity-90 transition">
+              <img src="/brand/logo-180.png" alt="TrainAR" width="100" height="26" class="h-6 w-auto opacity-80" />
+            </a>
+            <p class="mt-3 text-sm text-[#6B7280] max-w-xs leading-relaxed">
+              The developer surface for partners building on TrainAR.
+            </p>
+          </div>
+          <div class="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-[#6B7280]">
+            <a href="https://trainar.ai" class="hover:text-[#121621] transition">trainar.ai</a>
+            <a href="https://docs.trainar.ai" class="hover:text-[#121621] transition">Product docs</a>
+            <a href="https://trainar.ai/privacy" class="hover:text-[#121621] transition">Privacy</a>
+            <a href="https://trainar.ai/terms" class="hover:text-[#121621] transition">Terms</a>
+          </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-[#F1F5F9] text-xs text-[#6B7280]">
+          © 2026 TrainAR. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
