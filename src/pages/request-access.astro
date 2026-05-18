@@ -124,7 +124,7 @@ import Layout from '../layouts/Layout.astro';
         const data = Object.fromEntries(new FormData(formEl).entries());
 
         try {
-          const res = await fetch('https://xddgmkiguaohdewecmju.supabase.co/functions/v1/submit-developer-access-request', {
+          const res = await fetch('https://api.trainar.ai/v1/submit-developer-access-request', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data),
